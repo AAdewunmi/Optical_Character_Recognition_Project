@@ -14,25 +14,22 @@
         <form method="POST" enctype="multipart/form-data" class="upload-form">
             <div class="button-group">
                 <input type="file" id="imageInput" name="image" accept="image/*" hidden onchange="updateFileName(this)">
-                
+
                 <button type="button" onclick="document.getElementById('imageInput').click()" class="upload-btn">
                     BROWSE
                 </button>
-                
+
                 <button type="submit" class="extract-btn">EXTRACT</button>
             </div>
         </form>
-        
+
         <form method="POST" action="/reset" class="reset-form">
             <div class="button-group">
                 <button type="submit" class="reset-btn">RESET</button>
             </div>
         </form>
-        
+
         <span id="file-name" class="file-name">No file selected</span>
-        
-        
-        
 
         {% if image_filename or extracted_text %}
         <div class="results-container">
@@ -42,7 +39,7 @@
                 <img src="{{ url_for('uploaded_file', filename=image_filename) }}" class="preview-img">
             </div>
             {% endif %}
-        
+
             {% if extracted_text %}
             <div class="extracted">
                 <h3>Extracted</h3>
@@ -51,16 +48,24 @@
             {% endif %}
         </div>
         {% endif %}
+
         <div class="footer">
-            <p>Created by A. Adewunmi</p>        
+            <p>Created by A. Adewunmi</p>
+        </div>
     </div>
+
     <script>
+        /**
+         * Updates the file name display based on the selected file in the input.
+         *
+         * @param {HTMLInputElement} input The file input element.
+         */
         function updateFileName(input) {
             const fileName = input.files.length > 0 ? input.files[0].name : "No file selected";
             document.getElementById('file-name').textContent = fileName;
         }
-        </script>
-        
+    </script>
+
 </body>
 </html>
 
