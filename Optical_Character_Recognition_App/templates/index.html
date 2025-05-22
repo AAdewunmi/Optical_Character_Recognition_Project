@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Optical Character Recognition App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <span>Optical Character Recognition App</span>
+        <span class="timer">00:19</span>
+        <span class="made-by">Made by Pianalytix</span>
+    </div>
+
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+            <label class="upload-btn">
+                BROWSE
+                <input type="file" name="image" accept="image/*">
+            </label>
+            <button type="submit" class="extract-btn">EXTRACT</button>
+        </form>
+
+        {% if extracted_text %}
+        <div class="extracted">
+            <h3>Extracted</h3>
+            <pre>{{ extracted_text }}</pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
