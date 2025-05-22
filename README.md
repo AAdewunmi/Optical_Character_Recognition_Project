@@ -16,7 +16,7 @@ Optical_Character_Recognition_App/
 │   │   └── style.css
 │   ├── requirements.txt
 │   ├── ocr_utils.py  # Contains OCR logic from the notebook
-│  └── uploads/      # Where uploaded images go
+│   └── uploads/      # Where uploaded images go
 │
 README.md
 ```
