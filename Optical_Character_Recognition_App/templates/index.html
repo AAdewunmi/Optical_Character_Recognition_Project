@@ -21,6 +21,13 @@
             <button type="submit" class="extract-btn">EXTRACT</button>
         </form>
 
+        {% if image_filename %}
+        <div class="preview-section">
+            <h3>Uploaded Image</h3>
+            <img src="{{ url_for('uploaded_file', filename=image_filename) }}" class="preview-img">
+        </div>
+        {% endif %}
+
         {% if extracted_text %}
         <div class="extracted">
             <h3>Extracted</h3>
@@ -30,3 +37,4 @@
     </div>
 </body>
 </html>
+
