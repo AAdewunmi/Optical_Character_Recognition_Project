@@ -37,12 +37,17 @@ body {
     padding: 10px 20px;
     color: white;
     cursor: pointer;
-    display: inline-block;
-    margin-right: 10px;
-    position: relative;
-    overflow: hidden;
+    border: none;
     border-radius: 4px;
+    margin-right: 10px;
 }
+
+.file-name {
+    font-size: 14px;
+    color: #444;
+    margin-right: 15px;
+}
+
 
 .upload-btn input {
     position: absolute;
@@ -66,6 +71,24 @@ body {
 .extracted {
     background: white;
     padding: 20px;
+    border-radius: 5px;
+    border-left: 5px solid #a44d58;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.preview-section {
+    margin-bottom: 30px;
+}
+
+.preview-img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.preview-text {
+    background: #fff;
+    padding: 10px;
     border-radius: 5px;
     border-left: 5px solid #a44d58;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);

@@ -8,18 +8,18 @@
 <body>
     <div class="header">
         <span>Optical Character Recognition App</span>
-        <span class="timer">00:19</span>
-        <span class="made-by">Made by Pianalytix</span>
     </div>
 
     <div class="container">
         <form method="POST" enctype="multipart/form-data" class="upload-form">
-            <label class="upload-btn">
+            <input type="file" id="imageInput" name="image" accept="image/*" hidden onchange="updateFileName(this)">
+            <button type="button" onclick="document.getElementById('imageInput').click()" class="upload-btn">
                 BROWSE
-                <input type="file" name="image" accept="image/*">
-            </label>
+            </button>
+            <span id="file-name" class="file-name">No file selected</span>
             <button type="submit" class="extract-btn">EXTRACT</button>
         </form>
+        
 
         {% if image_filename %}
         <div class="preview-section">
@@ -35,6 +35,13 @@
         </div>
         {% endif %}
     </div>
+    <script>
+        function updateFileName(input) {
+            const fileName = input.files.length > 0 ? input.files[0].name : "No file selected";
+            document.getElementById('file-name').textContent = fileName;
+        }
+        </script>
+        
 </body>
 </html>
 
